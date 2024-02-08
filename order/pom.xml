@@ -12,8 +12,10 @@
 	<name>order</name>
 	<properties>
 		<akka.version>2.6.17</akka.version>
-		<akka.http.version>10.2.8</akka.http.version>
 		<akka.stream>2.6.17</akka.stream>
+		<akka.testkit>2.6.17</akka.testkit>
+		<akka.testkit-typed>2.6.17</akka.testkit-typed>
+		<akka.http.version>10.2.8</akka.http.version>
 		<aws.sdk.version>2.17.23</aws.sdk.version>
 	</properties>
 
@@ -48,6 +50,14 @@
 			<version>${aws.sdk.version}</version>
 		</dependency>
 
+		<!-- for MYSql -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.23</version> <!-- Use the correct version -->
+		</dependency>
+
+
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
 			<artifactId>akka-http-jackson_2.13</artifactId>
@@ -57,7 +67,27 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.12.5</version> <!-- Check for the latest version -->
+			<version>2.14.0</version> <!-- Check for the latest version -->
+		</dependency>
+
+		<!-- Akka TestKit and JUnit -->
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-testkit_2.13</artifactId>
+			<version>${akka.testkit}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-actor-testkit-typed_2.13</artifactId>
+			<version>${akka.testkit-typed}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
 		</dependency>
 
 

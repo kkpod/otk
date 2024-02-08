@@ -3,17 +3,17 @@ package com.kk.pod.order.message;
 import java.io.Serializable;
 
 //Message for retrieving an order
-public class GetOrderMessage implements Serializable{
-    /**
+public class GetOrderMessage implements Serializable {
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private String orderId;
 
-    public GetOrderMessage(String orderId) {
-        this.setOrderId(orderId);
-    }
+	public GetOrderMessage(String orderId) {
+		this.setOrderId(orderId);
+	}
 
 	public String getOrderId() {
 		return orderId;
@@ -23,5 +23,4 @@ public class GetOrderMessage implements Serializable{
 		this.orderId = orderId;
 	}
 
-    // Getter and other methods as needed
 }

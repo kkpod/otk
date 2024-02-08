@@ -9,20 +9,20 @@ import akka.http.javadsl.Http;
 
 public class OrderApi {
 
-    public static void main(String[] args) {
-        // Create an Akka system
-        ActorSystem system = ActorSystem.create("OrderApiSystem");
+	public static void main(String[] args) {
+		// Create an Akka system
+		ActorSystem system = ActorSystem.create("OrderApiSystem");
 
-        // Create an instance of the OrderActor
-        ActorRef orderActor = system.actorOf(OrderActor.props(), "orderActor");
+		// Create an instance of the OrderActor
+		ActorRef orderActor = system.actorOf(OrderActor.props(), "orderActor");
 
-        // Create the OrderRoutes
-        OrderRoutes orderRoutes = new OrderRoutes(orderActor);
+		// Create the OrderRoutes
+		OrderRoutes orderRoutes = new OrderRoutes(orderActor);
 
-        // Start the HTTP server
-        Http.get(system).newServerAt("localhost", 8080).bind(orderRoutes.routes());
-        System.out.println("Server started at http://localhost:8080/");
-        
-        // Your application logic goes here
-    }
+		// Start the HTTP server
+		Http.get(system).newServerAt("localhost", 8080).bind(orderRoutes.routes());
+		System.out.println("Server started at http://localhost:8080/");
+
+		// Your application logic goes here
+	}
 }

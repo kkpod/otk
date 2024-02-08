@@ -41,4 +41,5 @@ target/
 # Local Environment Variables
 .env
 
-
+# Configuration
+*.conf
